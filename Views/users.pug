@@ -1,0 +1,8 @@
+h1 To Do List
+a(href="/todoList/create") 
+ul  
+    each newTodo in todos
+        li
+            span=newTodo.name
+            span &nbsp
+            a(href="/todoList/"+ newTodo.id)  View

@@ -36,6 +36,13 @@ app.get("/todoList/:id",(req, res) => {
     })
    })
 
+app.get("/todoList/:id/delete",(req, res) => {
+    var todos = db.get("todoList").value();
+    var id = req.params.id;
+    db.get("todoList").remove({id:id}).write();
+    res.redirect("/todoList")
+})   
+
 
    app.get("/todoList/search", (req, res) => {
     var q = req.query.q;
